@@ -1,17 +1,13 @@
-import { CiHome, CiStar } from "react-icons/ci";
+import { GoHome } from "react-icons/go";
 import { PiCompassLight } from "react-icons/pi";
 import { IoAdd } from "react-icons/io5";
+import { VscCommentDiscussion } from "react-icons/vsc";
 
 const options = [
     {
-        icon: CiHome,
+        icon: GoHome,
         name: 'Home',
         path: '/'
-    },
-    {
-        icon: IoAdd,
-        name: 'Post',
-        path: '/post'
     },
     {
         icon: PiCompassLight,
@@ -19,9 +15,14 @@ const options = [
         path: '/explore'
     },
     {
-        icon: CiStar,
-        name: 'Following',
-        path: '/following'
+        icon: VscCommentDiscussion,
+        name: 'Discussions',
+        path: '/discussions'
+    },
+    {
+        icon: IoAdd,
+        name: 'Post',
+        path: '/post'
     }
 ]
 
