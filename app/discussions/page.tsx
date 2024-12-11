@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { IoIosSearch } from "react-icons/io";
 import { AiOutlineLike } from "react-icons/ai";
+import Link from 'next/link';
 
 const Page = () => {
 
@@ -31,7 +32,7 @@ const Page = () => {
     },
     {
       id:3,
-      title:"Best k-drama to watch in 2024.",
+      title:"Best k-dramas to watch in 2024.",
       author: 'Anuuu',
       description:"The best K-dramas to watch in 2024 are packed with compelling stories, diverse genres, and top-tier performances. From intense revenge plots to heartwarming romances, there's something for everyone. Whether you're into action, romance, or thought-provoking narratives, 2024's lineup is brimming with must-watch K-dramas.",
       date:"24/03/2024",
@@ -65,16 +66,21 @@ const Page = () => {
     <>
         <div className='flex justify-between w-full items-center'>
             <p className='text-2xl font-medium'>Discussions</p>
-            <form className='flex items-center bg-white w-[30%] rounded-sm'>
-                <IoIosSearch className='text-3xl mx-2 text-[#8967B3]'/>
-                <input type="text" placeholder='Search discussions...' className='w-full py-2 outline-none' name='query'/>
-            </form>
+            <div className='flex items-center gap-4 w-[35%]'>
+              <Link href='/discussions/create'>
+                <p className='px-3 py-2 text-white rounded-sm bg-[#8967B3] cursor-pointer'>Start Discussion</p>
+              </Link>
+              <form className='flex flex-grow items-center bg-white rounded-sm'>
+                  <IoIosSearch className='text-3xl mx-2 text-[#8967B3]'/>
+                  <input type="text" placeholder='Search discussions...' className='w-full py-2 outline-none' name='query'/>
+              </form>
+            </div>
         </div>
 
         <div className='mt-4 w-full'>
-            <ul className='flex items-center gap-4'>
-              <li className={`cursor-pointer ${mode && 'border-b-2 border-b-[#8967B3] text-[#8967B3]'}`} onClick={()=>setMode(true)}>Interests</li>
-              <li className={`cursor-pointer ${!mode && 'border-b-2 border-b-[#8967B3] text-[#8967B3]'}`} onClick={()=>setMode(false)}>Trending</li>
+            <ul className='flex items-center gap-6'>
+              <li className={`cursor-pointer p-1 ${mode && 'border-b-2 border-b-[#8967B3] text-[#8967B3]'}`} onClick={()=>setMode(true)}>Interests</li>
+              <li className={`cursor-pointer p-1 ${!mode && 'border-b-2 border-b-[#8967B3] text-[#8967B3]'}`} onClick={()=>setMode(false)}>Trending</li>
             </ul>
 
             <div className='flex flex-col gap-4 mt-4'>
